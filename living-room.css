@@ -1,49 +1,30 @@
-/* Make the bookshelf look clickable */
-#bookshelf {
-  cursor: pointer;
+.hidden {
+    display: none;
 }
 
-/* The dark background that covers the entire living room */
-#libraryOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Dimmed background */
-  z-index: 9999; /* Keeps it on top of everything else */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#library-popup {
+    position: absolute; /* Floats over the living room content */
+    top: 15%;
+    left: 20%;
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.3); /* Retro desktop drop shadow */
+    z-index: 100;
 }
 
-/* Classes to toggle visibility with JavaScript */
-.overlay-hidden {
-  display: none !important; /* Hides the popup completely */
+.popup-header {
+    background-color: #c0c0c0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
 }
 
-/* The actual white/custom styled box in the middle */
-.library-popup-content {
-  background-color: #f5f0e1; /* Example vintage paper color */
-  padding: 30px;
-  border-radius: 8px;
-  width: 80%;
-  max-width: 900px;
-  height: 80%;
-  overflow-y: auto; /* Adds scrollbar if content is long */
-  position: relative;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+iframe {
+    width: 100%;
+    height: calc(100% - 35px); /* Subtracts the height of the header */
+    border: none;
 }
-
-/* Close Button Style */
-#closeLibraryBtn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-/* PASTE YOUR library.css STYLES BELOW HERE */
-/* Example: .library-popup-content h1 { color: brown; } */
-

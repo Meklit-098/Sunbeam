@@ -4,29 +4,23 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial scale=1.0"/>
         <link rel="stylesheet" href="living-room.css">
+        <script src="living-room.js" defer></script>
         <title>Saron and Meklit's Hearth</title>
     </head>
     <body>
-        <!-- Your existing living room structure -->
-        <img id="bookshelf" src="bookshelf-image.jpg" alt="Bookshelf">
+        <!-- The trigger (word or image) -->
+<div id="library-trigger" style="cursor: pointer;">
+    <p>📚 Open Library</p>
+</div>
 
-        <!-- THE POPUP PANEL (Add this right before your closing </body> tag) -->
-        <div id="libraryOverlay" class="overlay-hidden">
-        <div class="library-popup-content">
-            
-            <!-- Close Button -->
-            <button id="closeLibraryBtn">&times; Close</button>
-            
-            <!-- YOUR LIBRARY HTML CONTENT GOES HERE -->
-            <h1>Welcome to the Library</h1>
-            <p>This is your custom designed library inside the popup.</p>
-            <!-- Add the rest of your library elements here -->
-
-        </div>
-        </div>
-
-        <!-- Link your JavaScript file -->
-        <script src="living-room.js"></script>
-
+<!-- The popup window -->
+<div id="library-popup" class="hidden">
+    <div class="popup-header">
+        <span>Library</span>
+        <button id="close-popup">X</button>
+    </div>
+    <!-- The iframe loads your separate library file inside this box -->
+    <iframe src="library.html"></iframe>
+</div>
     </body>
 </html>
