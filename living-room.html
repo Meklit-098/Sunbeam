@@ -7,10 +7,26 @@
         <title>Saron and Meklit's Hearth</title>
     </head>
     <body>
-        <!-- Inside the <body> where your bookshelf is located -->
+        <!-- Your existing living room structure -->
         <img id="bookshelf" src="bookshelf-image.jpg" alt="Bookshelf">
 
-        <!-- At the very bottom, right before the closing </body> tag -->
+        <!-- THE POPUP PANEL (Add this right before your closing </body> tag) -->
+        <div id="libraryOverlay" class="overlay-hidden">
+        <div class="library-popup-content">
+            
+            <!-- Close Button -->
+            <button id="closeLibraryBtn">&times; Close</button>
+            
+            <!-- YOUR LIBRARY HTML CONTENT GOES HERE -->
+            <h1>Welcome to the Library</h1>
+            <p>This is your custom designed library inside the popup.</p>
+            <!-- Add the rest of your library elements here -->
+
+        </div>
+        </div>
+
+        <!-- Link your JavaScript file -->
         <script src="living-room.js"></script>
+
     </body>
 </html>
