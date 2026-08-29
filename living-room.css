@@ -1,18 +1,4 @@
-.hidden {
-    display: none;
-}
-
-#library-popup {
-    position: absolute; /* Floats over the living room content */
-    top: 15%;
-    left: 20%;
-    width: 600px;
-    height: 400px;
-    background-color: white;
-    border: 2px solid #000;
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.3); /* Retro desktop drop shadow */
-    z-index: 100;
-}
+/* Keep your existing .hidden and #library-popup styles! */
 
 .popup-header {
     background-color: #c0c0c0;
@@ -20,11 +6,40 @@
     display: flex;
     justify-content: space-between;
     font-weight: bold;
+    border-bottom: 1px solid #888;
+    cursor: grab; /* Tells the user they can drag it */
+}
+
+.popup-header:active {
+    cursor: grabbing; /* Changes cursor while actively dragging */
+}
+
+/* Tab Styles */
+.tab-bar {
+    display: flex;
+    background-color: #e0e0e0;
     border-bottom: 2px solid #000;
+}
+
+.tab-btn {
+    padding: 5px 15px;
+    border: none;
+    border-right: 1px solid #888;
+    background-color: #c0c0c0;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background-color: white; /* Makes the active tab stand out */
+    font-weight: bold;
+    border-bottom: 2px solid white; /* Blends it into the iframe area */
+    margin-bottom: -2px;
 }
 
 iframe {
     width: 100%;
-    height: calc(100% - 35px); /* Subtracts the height of the header */
+    /* Adjust height to account for both header and tabs */
+    height: calc(100% - 62px); 
     border: none;
+    background-color: white;
 }
