@@ -8,23 +8,30 @@
         <title>Saron and Meklit's Hearth</title>
     </head>
     <body>
-        <!-- The trigger (word or image) -->
+        <button class="tab-btn active" data-src="chapter-books.html">Chapter Books</button>
+        <button class="tab-btn" data-src="web-comics.html">Web Comics</button>
         <div id="library-trigger" style="cursor: pointer;">
-            <p>📚 Open Window</p>
-        </div>
-
-        <div id="library-popup" class="hidden">
-            <div class="popup-header" id="popup-header">
-                <span>Desktop Window</span>
-                <button id="close-popup">X</button>
-            </div>
-            
-            <div class="tab-bar">
-                <button class="tab-btn active" data-src="library.html">Library</button>
-                <button class="tab-btn" data-src="music.html">Music</button>
+            <p>📚 Open Collection</p>
             </div>
 
-            <iframe id="window-frame" src="library.html"></iframe>
+            <div id="library-popup" class="hidden">
+            <div id="popup-header" class="window-header">
+                <span class="window-title">Browser Window</span>
+                <button id="close-popup" class="close-btn">&times;</button>
+            </div>
+
+            <div class="tab-strip">
+                <button class="tab-btn active" data-src="chapter-books.html">
+                <span>Chapter Books</span>
+                </button>
+                <button class="tab-btn" data-src="web-comics.html">
+                <span>Web Comics</span>
+                </button>
+            </div>
+
+            <div class="iframe-container">
+                <iframe id="window-frame" src="chapter-books.html"></iframe>
+            </div>
         </div>
     </body>
 </html>

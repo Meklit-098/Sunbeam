@@ -1,45 +1,95 @@
-/* Keep your existing .hidden and #library-popup styles! */
-
-.popup-header {
-    background-color: #c0c0c0;
-    padding: 5px 10px;
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    border-bottom: 1px solid #888;
-    cursor: grab; /* Tells the user they can drag it */
+.hidden {
+  display: none !important;
 }
 
-.popup-header:active {
-    cursor: grabbing; /* Changes cursor while actively dragging */
+/* Window Wrapper */
+#library-popup {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  width: 720px;
+  height: 480px;
+  background-color: #202124;
+  border-radius: 8px 8px 4px 4px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
 }
 
-/* Tab Styles */
-.tab-bar {
-    display: flex;
-    background-color: #e0e0e0;
-    border-bottom: 2px solid #000;
+/* Drag Header */
+.window-header {
+  padding: 8px 12px;
+  background-color: #202124;
+  color: #9aa0a6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+.window-header:active {
+  cursor: grabbing;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #9aa0a6;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #ffffff;
+}
+
+/* Chrome-Style Tab Bar */
+.tab-strip {
+  display: flex;
+  background-color: #202124;
+  padding: 0 8px;
+  gap: 4px;
 }
 
 .tab-btn {
-    padding: 5px 15px;
-    border: none;
-    border-right: 1px solid #888;
-    background-color: #c0c0c0;
-    cursor: pointer;
+  background-color: transparent;
+  color: #9aa0a6;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: sans-serif;
+  transition: background-color 0.15s ease;
 }
 
+.tab-btn:hover {
+  background-color: #292a2d;
+  color: #e8eaed;
+}
+
+/* Active Chrome Tab */
 .tab-btn.active {
-    background-color: white; /* Makes the active tab stand out */
-    font-weight: bold;
-    border-bottom: 2px solid white; /* Blends it into the iframe area */
-    margin-bottom: -2px;
+  background-color: #323639;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.iframe-container {
+  flex: 1;
+  background-color: #ffffff;
 }
 
 iframe {
-    width: 100%;
-    /* Adjust height to account for both header and tabs */
-    height: calc(100% - 62px); 
-    border: none;
-    background-color: white;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Temporarily disables iframe interaction during drag so mouse movement stays smooth */
+.dragging iframe {
+  pointer-events: none;
 }
